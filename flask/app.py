@@ -11,9 +11,10 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
+
 class VideoCamera(object):
     def __init__(self):
-        videoPath = "./videos/vid1.mp4"
+        videoPath = "./videos/four-full.mp4"
         print("\n\n\n>>>videoPath is ", videoPath)
         self.video = cv2.VideoCapture(videoPath)
     
@@ -21,6 +22,7 @@ class VideoCamera(object):
         self.video.release()
 
     def get_frame(self):
+        time.sleep(0.5)
         success, image = self.video.read()
         ret, jpeg = cv2.imencode('.jpg', image)
         return jpeg.tobytes()
