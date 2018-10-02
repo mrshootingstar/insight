@@ -1,7 +1,7 @@
 import os
 import cv2
 import time
-from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory, Response
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = './uploads'
@@ -13,7 +13,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 class VideoCamera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture(0)
+        videoPath = "./videos/vid1.mp4"
+        print("\n\n\n>>>videoPath is ", videoPath)
+        self.video = cv2.VideoCapture(videoPath)
     
     def __del__(self):
         self.video.release()
@@ -67,6 +69,7 @@ def detect_cars(filename):
     out.release()
     cv2.destroyAllWindows()
 
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -102,8 +105,9 @@ def download_file(filename):
 @app.route('/watch/<filename>')
 def watch_file(filename):
     video_path = url_for('static', filename=filename)
-    print(video_path)
+    print("Video Path is: ", video_path)
     return render_template('watch.html', video_path=video_path)
+
 
 def gen(camera):
     while True:
@@ -117,3 +121,6 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
+@app.route('/camera')
+def traffic():
+    return render_template('camera.html')

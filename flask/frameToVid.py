@@ -29,6 +29,6 @@ def convert_frames_to_video(pathIn,pathOut,fps):
     out.release()
  
 pathIn= './data/'
-pathOut = 'video.mp4'
+pathOut = 'traffic-light-camera-detected.mp4'
 fps = 25.0
 convert_frames_to_video(pathIn, pathOut, fps)

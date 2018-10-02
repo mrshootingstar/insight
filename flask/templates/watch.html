@@ -1,18 +1,19 @@
-<html>
-  <head>
-    <title>Video Streaming Demonstration</title>
-  </head>
-  <body>
-    <h1>Video Streaming Demonstration</h1>
-    <img src="{{ url_for('static', filename='dog.jpeg') }}" height="200px">
+{% extends "layout.html" %}
+{% block content %}
 
+<div class="row">
+  <div class="col-sm">
+  </div>  
+</div>
 
-    <video width="320" height="240" controls>
-        <source src="{{ url_for('static', filename='traffic-light-camera.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+  <h1>Detected Cars</h1>
+  <br>
 
-
-    
-  </body>
-</html>     
+  <img src="{{ url_for('video_feed') }}" height="300px">
+  <br>
+  <img src="{{ url_for('static', filename='arrival.png')  }}" height="150px">
+  <h3>Time between arrival</h3>
+  <br>
+  <img src="{{  url_for('static', filename='flow.png')  }}" height="150px">
+  <h3># cars at the light</h3>
+{% endblock %}
