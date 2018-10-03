@@ -2,7 +2,7 @@ version: '3.3'
 services:
   insight:
     image: python
-    container_name: "insight-website"
+    container_name: "traffix"
     volumes:
       - ./:/root/app
     ports:
