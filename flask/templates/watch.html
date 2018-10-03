@@ -2,18 +2,21 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-sm">
+<div class="col-sm">
+  <h1>Detected Cars</h1>
+  <img src="{{ url_for('video_feed') }}" height="350px">
   </div>  
 </div>
 
-  <h1>Detected Cars</h1>
-  <br>
+<div class="row">
+  <div class="col-sm">
+    <img src="{{ url_for('static', filename='arrival.png')  }}" height="350px">
+    <h3>Time between arrival</h3>
+  </div>
 
-  <img src="{{ url_for('video_feed') }}" height="300px">
-  <br>
-  <img src="{{ url_for('static', filename='arrival.png')  }}" height="150px">
-  <h3>Time between arrival</h3>
-  <br>
-  <img src="{{  url_for('static', filename='flow.png')  }}" height="150px">
-  <h3># cars at the light</h3>
+  <div class="col-sm">
+    <img src="{{  url_for('static', filename='flow.png')  }}" height="350px">
+    <h3># cars at the light</h3>
+  </div>
+</div>
 {% endblock %}
