@@ -126,3 +126,8 @@ def video_feed():
 @app.route('/camera')
 def traffic():
     return render_template('camera.html')
+
+
+@app.route('/slides')
+def presentation():
+    return render_template('slides.html')
