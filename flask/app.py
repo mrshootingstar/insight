@@ -104,11 +104,11 @@ def download_file(filename):
                                filename, as_attachment=True)
 
 
+
+@app.route('/watch')
 @app.route('/watch/<filename>')
-def watch_file(filename):
-    video_path = url_for('static', filename=filename)
-    print("Video Path is: ", video_path)
-    return render_template('watch.html', video_path=video_path)
+def watch_file(filename=None):
+    return render_template('watch.html')
 
 
 def gen(camera):
