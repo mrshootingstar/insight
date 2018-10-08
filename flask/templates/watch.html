@@ -7,16 +7,32 @@
   <img src="{{ url_for('video_feed') }}" height="350px">
   </div>  
 </div>
+<br>
+<br>
 
 <div class="row">
   <div class="col-sm">
-    <img src="{{ url_for('static', filename='arrival.png')  }}" height="350px">
-    <h3>Time between arrival</h3>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">5.6 seconds</h1>
+        <p class="lead">is the expected time until the arrival of the next car to the point of interest</p>
+      </div>
+    </div>
   </div>
-
   <div class="col-sm">
-    <img src="{{  url_for('static', filename='flow.png')  }}" height="350px">
-    <h3># cars at the light</h3>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">80% Accuracy</h1>
+        <p class="lead">Single Shot detector is able to detect 80% of the cars crossing the point of interest.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm">
+    <img src="{{ url_for('static', filename='final-run/time-between-arrival.png')  }}" height="350px">
   </div>
 </div>
 {% endblock %}

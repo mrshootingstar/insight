@@ -11,10 +11,9 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-
 class VideoCamera(object):
     def __init__(self):
-        videoPath = "./videos/four-full.mp4"
+        videoPath = "./static/final-run/sample.mp4"
         print("\n\n\n>>>videoPath is ", videoPath)
         self.video = cv2.VideoCapture(videoPath)
     
