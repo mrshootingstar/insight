@@ -1,17 +1,35 @@
 {% extends "layout.html" %}
 {% block content %}
-
   <div class="row">
     <div class="col-sm">
-      <form method=post enctype=multipart/form-data>
-        <div class="form-group">
-          <label>Upload a new file</label>
-          <input type=file class="form-control" name=file>
-          <br>
-        </div>
-        <br>
-        <input type=submit class="btn btn-primary" value=Upload>
-      </form>
+      <div class="jumbotron">
+        <h1 class="display-4">Traffix</h1>
+        <p class="lead">Measure traffic flow using computer vision</p>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="jumbotron">
+        <h1 class="display-4">Upload a new file</h1>
+        <form method=post enctype=multipart/form-data>
+          <div class="form-group">
+            <input type=file class="form-control" name=file>
+            <br>
+          </div>
+          <br>
+  
+          <input type=submit class="btn btn-info" value=Upload>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm">
+        <div class="jumbotron">
+          <h1 class="display-4">Or see a sample</h1>
+          <h4>(6th Ave & Pine St)</h4>
+          <img src="{{ url_for('static', filename='0.png')  }}" class="img-fluid">
+        <br>
+        <br>
+        <a href="/watch" class="btn btn-info btn-block" role="button">Go</a>
+      </div>
   </div>
 {% endblock %}
