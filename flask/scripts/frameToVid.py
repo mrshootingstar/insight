@@ -1,3 +1,12 @@
+'''
+USAGE:
+
+pathIn= './data/'
+pathOut = 'traffic-light-camera-detected.mp4'
+fps = 25.0
+convert_frames_to_video(pathIn, pathOut, fps)
+
+'''
 import cv2
 import numpy as np
 import os
@@ -28,7 +37,3 @@ def convert_frames_to_video(pathIn,pathOut,fps):
         out.write(frame_array[i])
     out.release()
  
-pathIn= './data/'
-pathOut = 'traffic-light-camera-detected.mp4'
-fps = 25.0
-convert_frames_to_video(pathIn, pathOut, fps)

@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  insight:
+    image: python
+    container_name: "traffix-virtualenv"
+    volumes:
+      - ./:/root/app
+    ports:
+      - "5556:5000"
+    restart: always
+    working_dir: /root/app
+
+    command: >
+      bash -c "pip install virtualenv && virtualenv /ENV && source /ENV/bin/activate && pip install -r requirements.txt && export FLASK_APP=app.py &&  flask run --host=0.0.0.0"
