@@ -6,6 +6,7 @@
       <div class="jumbotron">
         <h1 class="display-4">Traffix</h1>
         <p class="lead">Measure traffic flow using computer vision</p>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -31,5 +32,18 @@
         <br>
         <a href="/watch" class="btn btn-info btn-block" role="button">Go</a>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="jumbotron">
+        <h1 class="display-4">How does it work?</h1>
+        <p class="lead">
+          We use video files captured from <a href="/camera">traffic cameras</a> in the city of Seattle and process them using python bindings for 
+          <a href="https://opencv.org/">OpenCV</a> and <a href="https://gluon-cv.mxnet.io/">GluonCV</a>'s implementation of Single Shot detector to detect cars 
+          crossing an arbitrary point of reference.
+        </p>
+      </div>
+    </div>
   </div>
 {% endblock %}
